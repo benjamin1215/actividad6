@@ -1,0 +1,212 @@
+/* ===== ESTILO GENERAL ===== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+
+    background:
+        radial-gradient(circle at 15% 20%, #777 0 8%, transparent 8.5%),
+        radial-gradient(circle at 85% 75%, #444 0 10%, transparent 10.5%),
+        linear-gradient(135deg, #111, #555, #ddd, #333);
+
+    padding: 30px;
+}
+
+
+/* ===== CONTENEDOR VISUAL ===== */
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 15px solid #fff;
+    transform: rotate(12deg);
+    opacity: 0.15;
+    z-index: -1;
+}
+
+
+/* ===== TITULO / TEXTO ===== */
+
+body > p:first-child {
+    background: #111;
+    color: #fff;
+
+    padding: 20px 30px;
+    margin-bottom: 25px;
+
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+
+    border: 6px solid #fff;
+    box-shadow: 12px 12px 0 #000;
+}
+
+
+/* ===== INPUTS ===== */
+
+input {
+    width: 350px;
+    padding: 18px;
+    margin: 8px;
+    text-align: center;
+
+    background: #eee;
+    color: #111;
+
+    border: 5px solid #111;
+    border-radius: 0;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    outline: none;
+
+    box-shadow: 7px 7px 0 #000;
+
+    transition: 0.2s;
+}
+
+
+/* Efecto al seleccionar */
+
+input:focus {
+    background: #fff;
+
+    transform: translate(-3px, -3px);
+
+    box-shadow: 10px 10px 0 #000;
+}
+
+
+/* ===== BOTÓN ===== */
+
+button {
+    margin-top: 20px;
+
+    padding: 18px 35px;
+
+    background: #111;
+    color: #fff;
+
+    border: 6px solid #fff;
+
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        8px 8px 0 #000,
+        15px 15px 0 #777;
+
+    transition: 0.2s;
+}
+
+
+/* Efecto al pasar el mouse */
+
+button:hover {
+    background: #444;
+
+    transform: translate(-5px, -5px);
+
+    box-shadow:
+        13px 13px 0 #000,
+        20px 20px 0 #888;
+}
+
+
+/* Efecto al presionar */
+
+button:active {
+    transform: translate(5px, 5px);
+
+    box-shadow:
+        3px 3px 0 #000,
+        6px 6px 0 #777;
+}
+
+
+/* ===== RESULTADO ===== */
+
+#Resultado {
+    min-width: 400px;
+    max-width: 600px;
+
+    margin-top: 35px;
+    padding: 25px;
+
+    background: #fff;
+
+    border: 7px solid #111;
+
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+
+    box-shadow:
+        10px 10px 0 #000,
+        18px 18px 0 #555;
+
+    text-transform: uppercase;
+}
+
+
+/* ===== DECORACIÓN MAXIMALISTA ===== */
+
+body::after {
+    content: "IMC";
+    position: fixed;
+
+    top: 20px;
+    right: 30px;
+
+    font-size: 80px;
+    font-weight: 900;
+
+    color: #fff;
+    opacity: 0.15;
+
+    transform: rotate(-10deg);
+
+    pointer-events: none;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px) {
+
+    body > p:first-child {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    #Resultado {
+        min-width: 90%;
+        font-size: 18px;
+    }
+}

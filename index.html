@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <p>Por favor ingrese su peso y altura</p>
+    <input type="number" id="peso" placeholder="Ingrese su peso en KG">
+    <input type="number" id="altura" placeholder="Ingrese su altura con un punto decimal (ej: 1.75)">
+    <button onclick="calcularIMC()">Calcular IMC</button>
+    <p id="Resultado"></p>
+
+    <script>
+        function calcularIMC() {
+           let peso = Number(document.getElementById("peso").value);
+           let altura = Number(document.getElementById("altura").value);
+
+           const imc = peso / (altura * altura);
+           const resultado = document.getElementById("Resultado");
+
+           resultado.innerText = `Tu IMC es: ${imc.toFixed(2)}`;
+           if (imc >= 18.5 && imc < 24.9) {
+               document.getElementById("Resultado").innerText += " - Tiene un IMC normal";
+           } else if (imc >= 25) {
+               document.getElementById("Resultado").innerText += " - Tiene un IMC alto";
+           } else {
+               document.getElementById("Resultado").innerText += " - Tiene un IMC bajo";
+           }
+    
+        }
+    </script>
+</body>
+</html>
